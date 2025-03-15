@@ -5,5 +5,8 @@ export const resolvers: Resolvers = {
     featuredListings: (_parent, _args, { dataSources }) => {
       return dataSources.listingAPI.listFeaturedListings();
     },
+    listing: (_parent, { id }, { dataSources }) => {
+      return dataSources.listingAPI.getListing(id);
+    },
   },
 };
