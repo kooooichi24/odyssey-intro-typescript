@@ -17,4 +17,17 @@ export const resolvers: Resolvers = {
         : dataSources.listingAPI.getAmenities(id)
     },
   },
+  Mutation: {
+    createListing: async (_, { input }, { dataSources }) => {
+      const response = await dataSources.listingAPI.createListing(input);
+
+      // everything succeeds with the mutation
+      return {
+        code: 200,
+        success: true,
+        message: "Listing successfully created!",
+        listing: response
+      };
+    },
+  },
 };
