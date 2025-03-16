@@ -3,7 +3,7 @@ import { validateFullAmenities } from "./helpers";
 
 export const resolvers: Resolvers = {
   Query: {
-    featuredListings: (_parent, _args, { dataSources }) => {
+    featuredListings: (_, __, { dataSources }) => {
       return dataSources.listingAPI.listFeaturedListings();
     },
     listing: (_parent, { id }, { dataSources }) => {
